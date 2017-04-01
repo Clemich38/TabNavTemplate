@@ -15,7 +15,7 @@ import Theme from './../Theme'
 export default class Tab3 extends React.Component {
   static navigationOptions = {
     tabBar: {
-      label: 'Tab3',
+      label: 'Tab 3',
       icon: ({ tintColor }) => (
         <Icon name="ios-boat-outline" size={20} style={[{ color: tintColor }]} />
       ),
@@ -27,7 +27,7 @@ export default class Tab3 extends React.Component {
       <View style={styles.container}>
         <Button
           onPress={() => this.props.navigation.navigate('Tab1')}
-          title="Go to Tab1"
+          title="< Go Back to Tab 1"
           color={Theme.buttonColor}
         />
       </View>

@@ -10,6 +10,10 @@ export default class Theme {
   static buttonColor = 'mediumaquamarine';
   static textColor = 'steelblue';
 
+  static getTabBackgroundColor () {
+    return this.tabBackgroundColor
+  }
+
   // static activeTabTintColor = 'tomato'
   // static statusBarColor = '#198d87';
   // static tabBackgroundColor = 'lightseagreen';
@@ -23,8 +27,5 @@ export default class Theme {
   // static tabTitleColor = 'white';
   // static buttonColor = 'mediumaquamarine';
   // static textColor = 'dimgrey';
-
-
-
 
 }

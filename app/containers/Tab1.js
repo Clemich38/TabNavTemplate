@@ -24,14 +24,21 @@ export default class Tab1 extends React.Component {
 
   render() {
     return (
-      <Button
-        onPress={() => this.props.navigation.navigate('Tab2')}
-        title="Go to Tab2"
-      />
+      <View style={styles.container}>
+        <Button
+          onPress={() => this.props.navigation.navigate('Tab2')}
+          title="Go to Tab2"
+        />
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  
+  container: {
+    flex: 1,
+    paddingTop: 60,
+    paddingLeft: 25,
+    paddingRight: 25,
+  },
 });

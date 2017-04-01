@@ -56,7 +56,32 @@ class App extends React.Component {
       swipeEnabled: true,
     });
 
+  refresh () {
+    this.TabNavTemplate = TabNavigator({
+      Tab1: {
+        screen: Tab1,
+      },
+      Tab2: {
+        screen: Tab2,
+      },
+      Tab3: {
+        screen: Tab3,
+      },
+    }, {
+        tabBarOptions: {
+          activeBackgroundColor: this.props.tabBackgroundColor,
+          inactiveBackgroundColor: this.props.tabBackgroundColor,
+          activeTintColor: this.props.activeTabTintColor,
+          inactiveTintColor: this.props.tabTitleColor,
+          style: { backgroundColor: this.props.tabBackgroundColor },
+          indicatorStyle: { backgroundColor: this.props.activeTabTintColor },
+        },
+        swipeEnabled: true,
+      });
+  }
+
   render() {
+    this.refresh();
     return (
       <this.TabNavTemplate  />
     );

@@ -33,10 +33,21 @@ export const reducer = (state = initialState, action) => {
 
   switch (type) {
     case types.SET_PRIMARY_COLOR: {
-      return {
-        ...state,
-        tabBackgroundColor: color,
-      }
+      if (payload === 'steelblue')
+        return {
+          ...state,
+          tabBackgroundColor: 'steelblue',
+        }
+      else if (payload === 'tomato')
+        return {
+          ...state,
+          tabBackgroundColor: 'tomato',
+        }
+      else if (payload === 'lightseagreen')
+        return {
+          ...state,
+          tabBackgroundColor: 'lightseagreen',
+        }
     }
     default: {
       return state

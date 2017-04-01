@@ -6,6 +6,7 @@ import {
   Image,
   Button
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 // Theme
 import Theme from './../Theme'
@@ -15,12 +16,9 @@ export default class Tab1 extends React.Component {
   static navigationOptions = {
     tabBar: {
       label: 'Tab1',
-      /*icon: ({ tintColor }) => (
-        <Image
-          source={require('./chats-icon.png')}
-          style={[styles.icon, { tintColor: tintColor }]}
-        />
-      ),*/
+      icon: ({ tintColor }) => (
+        <Icon name="ios-basketball-outline" size={20} style={[{ color: tintColor }]} />
+      ),
     },
   }
 
@@ -35,8 +33,5 @@ export default class Tab1 extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  icon: {
-    width: 26,
-    height: 26,
-  },
+  
 });

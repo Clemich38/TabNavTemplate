@@ -28,7 +28,12 @@ const TabNavTemplate = TabNavigator({
   },
 }, {
     tabBarOptions: {
-      activeTintColor: '#e91e63',
+      activeBackgroundColor: Theme.tabBackgroundColor,
+      inactiveBackgroundColor: Theme.tabBackgroundColor,
+      activeTintColor: Theme.activeTabTintColor,
+      inactiveTintColor: Theme.tabTitleColor,
+      style: { backgroundColor: Theme.tabBackgroundColor},
+      indicatorStyle: { backgroundColor: Theme.activeTabTintColor },
     },
     swipeEnabled: true,
   });

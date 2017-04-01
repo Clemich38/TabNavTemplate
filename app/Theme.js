@@ -3,31 +3,28 @@
 // so you just have to change your colors here
 export default class Theme {
 
-  static headerTitleColor = 'white';
-  static headerBackTextColor = 'white';
-  static headerBackgroundColor = 'steelblue';
+  static activeTabTintColor = 'mediumaquamarine'
   static statusBarColor = '#3a6c96';
-  static titleTextColor = 'steelblue';
+  static tabBackgroundColor = 'steelblue';
+  static tabTitleColor = 'white';
+  static buttonColor = 'mediumaquamarine';
   static textColor = 'steelblue';
-  static listItemColor = 'whitesmoke';
-  static buttonColor = 'dodgerblue';
 
-  // static headerTitleColor = 'white';
-  // static headerBackTextColor = 'white';
-  // static headerBackgroundColor = 'lightseagreen';
+  // static activeTabTintColor = 'tomato'
   // static statusBarColor = '#198d87';
-  // static titleTextColor = 'lightseagreen';
+  // static tabBackgroundColor = 'lightseagreen';
+  // static tabTitleColor = 'white';
+  // static buttonColor = 'tomato';
   // static textColor = 'dimgrey';
-  // static listItemColor = 'whitesmoke';
-  // static buttonColor = 'dodgerblue';
 
-  // static headerTitleColor = 'white';
-  // static headerBackTextColor = 'white';
-  // static headerBackgroundColor = 'tomato';
+  // static activeTabTintColor = 'mediumaquamarine'
   // static statusBarColor = '#c94e38';
-  // static titleTextColor = 'tomato';
-  // static textColor = 'dimgrey';
-  // static listItemColor = 'whitesmoke';
+  // static tabBackgroundColor = 'tomato';
+  // static tabTitleColor = 'white';
   // static buttonColor = 'mediumaquamarine';
+  // static textColor = 'dimgrey';
+
+
+
 
 }

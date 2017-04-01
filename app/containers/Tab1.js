@@ -4,7 +4,8 @@ import {
   View,
   StyleSheet,
   Image,
-  Button
+  Button,
+  StatusBar
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -25,9 +26,14 @@ export default class Tab1 extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar 
+          backgroundColor={Theme.statusBarColor}
+          barStyle="light-content"
+        />
         <Button
           onPress={() => this.props.navigation.navigate('Tab2')}
           title="Go to Tab2"
+          color={Theme.buttonColor}
         />
       </View>
     );

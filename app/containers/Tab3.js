@@ -28,6 +28,7 @@ export default class Tab3 extends React.Component {
         <Button
           onPress={() => this.props.navigation.navigate('Tab1')}
           title="Go to Tab1"
+          color={Theme.buttonColor}
         />
       </View>
     );

@@ -11,7 +11,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 // Theme
 import Theme from './../Theme'
 
-
 export default class Tab2 extends React.Component {
   static navigationOptions = {
     tabBar: {
@@ -28,6 +27,7 @@ export default class Tab2 extends React.Component {
         <Button
           onPress={() => this.props.navigation.navigate('Tab3')}
           title="Go to Tab3"
+          color={Theme.buttonColor}
         />
       </View>
     );

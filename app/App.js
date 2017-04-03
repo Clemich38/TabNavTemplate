@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 
 // Theme
 // import Theme from './Theme'
@@ -56,6 +56,24 @@ class App extends React.Component {
       swipeEnabled: true,
     });
 
+  mainNav = StackNavigator({
+    Home: {
+      screen: this.TabNavTemplate, 
+      navigationOptions: {
+        title: 'Tab Nav Template',
+      },
+      header: {
+        titleStyle: {
+          color: this.props.activeTabTintColor
+        },
+        tintColor: this.props.activeTabTintColor,
+        style: {
+          backgroundColor: this.props.tabBackgroundColor
+        }
+      },
+    },
+  });
+
   refresh () {
     this.TabNavTemplate = TabNavigator({
       Tab1: {
@@ -78,12 +96,31 @@ class App extends React.Component {
         },
         swipeEnabled: true,
       });
+
+    this.mainNav = StackNavigator({
+      Home: {
+        screen: this.TabNavTemplate,
+        navigationOptions: {
+          title: 'Tab Nav Template',
+          header: {
+            elevation: 0,
+            titleStyle: {
+              color: this.props.activeTabTintColor
+            },
+            tintColor: this.props.activeTabTintColor,
+            style: {
+              backgroundColor: this.props.tabBackgroundColor
+            }
+          },
+        },
+      },
+    });
   }
 
   render() {
     this.refresh();
     return (
-      <this.TabNavTemplate  />
+      <this.mainNav  />
     );
   }
 }

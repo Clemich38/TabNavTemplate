@@ -6,13 +6,21 @@ import {
   Image,
   Button
 } from 'react-native';
+import { connect } from 'react-redux'
+import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/Ionicons';
 
-// Theme
-import Theme from './../Theme'
+// Redux
+import { actionCreators } from '../redux/appRedux'
+
+// Map Redux states to props
+const mapStateToProps = (state) => ({
+  textColor: state.textColor,
+  buttonColor: state.buttonColor,
+})
 
 
-export default class Tab3 extends React.Component {
+class Tab3 extends React.Component {
   static navigationOptions = {
     tabBar: {
       label: 'Tab 3',
@@ -28,7 +36,7 @@ export default class Tab3 extends React.Component {
         <Button
           onPress={() => this.props.navigation.navigate('Tab1')}
           title="< Go Back to Tab 1"
-          color={Theme.buttonColor}
+          color={this.props.buttonColor}
         />
       </View>
     );
@@ -43,3 +51,5 @@ const styles = StyleSheet.create({
     paddingRight: 25,
   },
 });
+
+export default connect(mapStateToProps)(Tab3)

@@ -2,24 +2,26 @@ import React from 'react';
 import {
   Text,
   View,
+  ScrollView,
+  TouchableOpacity,
   StyleSheet,
   Image,
   Button,
-  StatusBar
+  StatusBar,
+
 } from 'react-native';
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/Ionicons';
 
-// Theme
-import Theme from './../Theme'
-
 // Redux
-import { actionCreators } from '../redux/appRedux'
+import { themes, actionCreators } from '../redux/appRedux'
 
 // Map Redux states to props
 const mapStateToProps = (state) => ({
-  
+  textColor: state.textColor,
+  statusBarColor: state.statusBarColor,
+  buttonColor: state.buttonColor,
 })
 
 class Tab1 extends React.Component {
@@ -33,39 +35,47 @@ class Tab1 extends React.Component {
     },
   }
 
-  setPrimaryColor(color) {
+  setPrimaryColor(index) {
     const { dispatch } = this.props
-    dispatch(actionCreators.setPrimaryColor(color));
+    dispatch(actionCreators.setPrimaryColor(index));
+  }
+
+  boxStyle(options) {
+    return {
+      width: 60,
+      height: 60,
+      padding: 25,
+      margin: 5,
+      borderRadius: 10,
+      backgroundColor: options
+    }
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <StatusBar 
-          backgroundColor={Theme.statusBarColor}
+
+      <ScrollView style={styles.container}>
+        <StatusBar
+          backgroundColor={this.props.statusBarColor}
           barStyle="light-content"
         />
-        <Button
-          onPress={this.setPrimaryColor.bind(this, 'steelblue')}
-          title="steelblue"
-          color={Theme.buttonColor}
-        />
-        <Button
-          onPress={this.setPrimaryColor.bind(this, 'tomato')}
-          title="tomato"
-          color={Theme.buttonColor}
-        />
-        <Button
-          onPress={this.setPrimaryColor.bind(this, 'lightseagreen')}
-          title="lightseagreen"
-          color={Theme.buttonColor}
-        />
+        <View style={styles.grid}>
+          {themes.map((theme, index) => {
+            return (
+              <TouchableOpacity
+                style={this.boxStyle(theme.defaultPrimaryColor)}
+                key={index}
+                onPress={this.setPrimaryColor.bind(this, index)}
+              />
+            );
+          })}
+        </View>
         <Button
           onPress={() => this.props.navigation.navigate('Tab2')}
           title="Go to Tab 2 >"
-          color={Theme.buttonColor}
+          color={this.props.buttonColor}
         />
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -76,6 +86,13 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     paddingLeft: 25,
     paddingRight: 25,
+    paddingbottom: 60,
+  },
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginBottom: 20
   },
 });
 

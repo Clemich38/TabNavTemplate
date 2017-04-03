@@ -46,7 +46,7 @@ class Tab3 extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 60,
+    paddingTop: 40,
     paddingLeft: 25,
     paddingRight: 25,
   },

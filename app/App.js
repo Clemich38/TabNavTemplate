@@ -103,12 +103,12 @@ class App extends React.Component {
         navigationOptions: {
           title: 'Tab Nav Template',
           header: {
-            elevation: 0,
             titleStyle: {
               color: this.props.activeTabTintColor
             },
             tintColor: this.props.activeTabTintColor,
             style: {
+              elevation: 0,
               backgroundColor: this.props.tabBackgroundColor
             }
           },

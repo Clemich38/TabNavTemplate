@@ -53,7 +53,6 @@ class Tab1 extends React.Component {
 
   render() {
     return (
-
       <ScrollView style={styles.container}>
         <StatusBar
           backgroundColor={this.props.statusBarColor}
@@ -74,6 +73,7 @@ class Tab1 extends React.Component {
           onPress={() => this.props.navigation.navigate('Tab2')}
           title="Go to Tab 2 >"
           color={this.props.buttonColor}
+          style={styles.button}
         />
       </ScrollView>
     );
@@ -83,10 +83,10 @@ class Tab1 extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 60,
+    paddingTop: 40,
     paddingLeft: 25,
     paddingRight: 25,
-    paddingbottom: 60,
+    paddingBottom: 60,
   },
   grid: {
     flexDirection: 'row',
@@ -94,6 +94,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 20
   },
+  button: {
+    margin: 20
+  }
 });
 
 

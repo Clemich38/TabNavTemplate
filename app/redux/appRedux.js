@@ -32,6 +32,7 @@ export const themes = [
   { darkPrimaryColor: '#5D4037', defaultPrimaryColor: '#795548', lightPrimaryColor: '#D7CCC8' },
   { darkPrimaryColor: '#616161', defaultPrimaryColor: '#9E9E9E', lightPrimaryColor: '#F5F5F5' },
   { darkPrimaryColor: '#455A64', defaultPrimaryColor: '#607D8B', lightPrimaryColor: '#CFD8DC' },
+  { darkPrimaryColor: '#303030', defaultPrimaryColor: '#454545', lightPrimaryColor: '#A0A0A0' },
 ]
 
 const initialState = {
@@ -40,7 +41,7 @@ const initialState = {
   tabBackgroundColor: themes[0].defaultPrimaryColor,
   tabTitleColor: themes[0].lightPrimaryColor,
   buttonColor: themes[0].defaultPrimaryColor,
-  textColor: themes[0].defaultPrimaryColor,
+  textColor: '#212121',
 }
 export const reducer = (state = initialState, action) => {
   const { activeTabTintColor,
@@ -60,7 +61,6 @@ export const reducer = (state = initialState, action) => {
         tabBackgroundColor: themes[payload].defaultPrimaryColor,
         tabTitleColor: themes[payload].lightPrimaryColor,
         buttonColor: themes[payload].defaultPrimaryColor,
-        textColor: themes[payload].defaultPrimaryColor,
       }
     }
     default: {

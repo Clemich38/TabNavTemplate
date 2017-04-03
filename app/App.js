@@ -33,49 +33,10 @@ const mapStateToProps = (state) => ({
 
 class App extends React.Component {
 
-  // Tab navigation configuration
-  TabNavTemplate = TabNavigator({
-    Tab1: {
-      screen: Tab1,
-    },
-    Tab2: {
-      screen: Tab2,
-    },
-    Tab3: {
-      screen: Tab3,
-    },
-  }, {
-      tabBarOptions: {
-        activeBackgroundColor: this.props.tabBackgroundColor,
-        inactiveBackgroundColor: this.props.tabBackgroundColor,
-        activeTintColor: this.props.activeTabTintColor,
-        inactiveTintColor: this.props.tabTitleColor,
-        style: { backgroundColor: this.props.tabBackgroundColor },
-        indicatorStyle: { backgroundColor: this.props.activeTabTintColor },
-      },
-      swipeEnabled: true,
-    });
-
-  mainNav = StackNavigator({
-    Home: {
-      screen: this.TabNavTemplate, 
-      navigationOptions: {
-        title: 'Tab Nav Template',
-      },
-      header: {
-        titleStyle: {
-          color: this.props.activeTabTintColor
-        },
-        tintColor: this.props.activeTabTintColor,
-        style: {
-          backgroundColor: this.props.tabBackgroundColor
-        }
-      },
-    },
-  });
+  mainNav = this.refresh();
 
   refresh () {
-    this.TabNavTemplate = TabNavigator({
+    const TabNavTemplate = TabNavigator({
       Tab1: {
         screen: Tab1,
       },
@@ -97,9 +58,9 @@ class App extends React.Component {
         swipeEnabled: true,
       });
 
-    this.mainNav = StackNavigator({
+    return StackNavigator({
       Home: {
-        screen: this.TabNavTemplate,
+        screen: TabNavTemplate,
         navigationOptions: {
           title: 'Tab Nav Template',
           header: {
@@ -118,7 +79,7 @@ class App extends React.Component {
   }
 
   render() {
-    this.refresh();
+    this.mainNav = this.refresh();
     return (
       <this.mainNav  />
     );

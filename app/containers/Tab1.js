@@ -26,6 +26,7 @@ const mapStateToProps = (state) => ({
 
 class Tab1 extends React.Component {
 
+  // Setup Tab title and icon (for IOS)
   static navigationOptions = {
     tabBar: {
       label: 'Tab 1',
@@ -35,11 +36,13 @@ class Tab1 extends React.Component {
     },
   }
 
+  // Call redux actionCreator to change the color theme
   setPrimaryColor(index) {
     const { dispatch } = this.props
     dispatch(actionCreators.setPrimaryColor(index));
   }
 
+  // Dynamic style sheet returning method
   boxStyle(options) {
     return {
       width: 60,
@@ -51,6 +54,7 @@ class Tab1 extends React.Component {
     }
   }
 
+  
   render() {
     return (
       <ScrollView style={styles.container}>

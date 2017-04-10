@@ -9,8 +9,6 @@ import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
 import { TabNavigator, StackNavigator } from 'react-navigation';
 
-// Theme
-// import Theme from './Theme'
 
 // Pages
 import Tab1 from './containers/Tab1'
